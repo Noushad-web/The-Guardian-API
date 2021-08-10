@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Rye&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+SC:ital,wght@0,400;0,500;0,700;1,400&family=Fredericka+the+Great&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+$headline : 'Alegreya SC', serif;
+$content_font : 'PT Sans', sans-serif;
+
+$primary-color : #092e56;
+$secondary-color: rgb(233, 233, 233);
+
+body{
+    background-color: honeydew;
+    font-family: $content_font;
+    color: rgba(0,0,0,0.7) !important;
+}
+// color
+.theme-color{
+    background-color: $primary-color;
+    color: $secondary-color;
+}
+.heading{
+    font-family:$headline;
+    color: $primary-color;
+}
+
+.navbar-nav>li>a {
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-right: 20px;
+    color: $secondary-color;
+}
+
+.navbar-toggler {
+    padding: .20rem .50rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    background-color: transparent;
+    border: 1px solid white
+}
+
+.nav-link {
+    color: $secondary-color !important;
+
+    &:hover,&:focus{
+        border-bottom: 1px solid $secondary-color;
+    }
+    
+}
+.nav-item{
+    input{
+        background-color: transparent;
+        border: 0;
+        border-bottom: 1px solid $secondary-color;
+        color: $secondary-color;
+        transition: font-size .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        padding: .3rem .6rem;
+        
+        &:hover,&:focus{
+            font-size: 1.2rem;
+            border: 1px solid $secondary-color;
+        }
+    }
+    button{
+        background-color: transparent;
+        border: 0;
+        color: $secondary-color;
+        transition: font-size .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+        &:hover,&:focus{
+            font-size: 1.2rem;
+        }
+    }
+}
+
+.navbar-brand {
+    color: $secondary-color;
+    font-family: 'rye', cursive;
+    margin-bottom: 4px;
+    font-size: 27px
+}
+
+.navbar-red:hover .wrapper {
+    clip-path: polygon(81% 0, 100% 0, 100% 50%, 100% 100%, 65% 100%)
+}
+
+.navbar-brand:hover {
+    color: $secondary-color
+}
+
+.navbar-red, header {
+    background-color: $primary-color;
+    color: $secondary-color
+}
+
+.all-show {
+    z-index: 10
+}
+
+
+img{
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+
+.wrapper_news{
+    border-bottom: 4px solid #000;
+}
+
+.thumbnail_headline{
+    font-size: 1.2rem;
+    color: $primary-color;
+    padding:0 1rem .8rem;
+    font-family: $content_font;
+
+    small{
+        font-size: .8rem;
+        color:rgba(0,0,0,0.7)
+    }
+}
+
+.thumbnail_wrapper{
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    // background-color: $primary-color;
+    border: 1px solid white;
+    cursor: pointer;
+    transition: box-shadow .3s linear;
+    text-decoration: none;
+
+
+    &:hover,&:focus{
+        box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+    }
+    
+}
+
+.main-headline{
+    font-family: $headline;
+
+    img{
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.info{
+    @media screen and (max-width:769px) {
+        font-size: 0.8rem;
+    }
+}
+
+
+
+
+// footer 
+
+footer{
+    // min-height: 100vh;
+    .trust{
+        // border-top: 1px dashed $secondary-color;
+        // border-bottom: 1px dashed $secondary-color;
+        font-family: $headline;
+
+        span{
+            background-color: #003739;
+            color: white;
+        }
+    }
+    .container{
+
+        
+
+        ul{
+            list-style: none;
+            justify-content: center;
+            gap: 2rem;
+            padding-left: 0;
+
+           
+            .footer_item{
+
+                a{
+                    color: $secondary-color;
+                    text-decoration: none;
+                    font-family: $content_font;
+                    font-size: 1.2rem;
+                    letter-spacing: 1px;
+
+                    &:hover,&:focus{
+                        border-bottom: 1px solid $secondary-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:768px){
+    .footer_item{
+        a{
+            font-size: 1rem !important;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+// -------------------------------Loader------------------------------
+
+
+.loader{
+    position: absolute;
+    width:100%;
+    height:100vh;
+//    background-image: url('./pexels-daria-rem-1726074.jpg');
+//    background-size: cover;
+    overflow: hidden;
+    background-color:rgba(0,0,0,1);
+    color:white;
+    display: grid;
+    place-items: center;
+    animation: loader-animation 3s linear 0s 1 normal forwards;
+    z-index: 100;
+    opacity: 1;
+  }
+  
+  @keyframes loader-animation{
+   
+    0%{
+        opacity: 1;
+    }
+
+    90%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+        z-index: 0;
+        display: none;
+    }
+  }
+  
+  .text-loader{
+    margin: auto;
+    /* width: fit-content; */
+    font-size: 2rem;
+    font-family: 'rye', cursive;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 1s;
+  }
+  
+  @keyframes fadeIn{
+    0%{
+      opacity: 0;
+      transform: translateY(0)
+    }
+
+    100%{
+      transform: translateY(-10px);
+      opacity: 1;
+    }
+  }
+
+
+
+
+  .main-wrapper{
+      animation: mainDataAnimation 1s ease forwards 3s ;
+      opacity: 0;
+  }
+
+  @keyframes mainDataAnimation {
+      
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+      
+  }
+
+
+
+
+
